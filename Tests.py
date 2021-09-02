@@ -1,4 +1,5 @@
 from random import shuffle
+c=int()
 lista=[]
 for c in range(1,8):
     n=float(input('Digite o peso da {}º pessoa: '.format(c)))
