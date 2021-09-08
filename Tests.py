@@ -1,12 +1,10 @@
+from random import shuffle
 l=[]
-c=0
+for c in range(0,5):
+    l.append(int(input(f'Digite o {c+1}º valor: ')))
 while True:
-    t=int(input('Digite um valor: '))
-    if t in l:
-        print(f'O valor {t} está duplicado! Não vou adicionar.')
-    else:
-        l.append(t)
-    r=str(input('Deseja continur? [S/N] ')).upper()
-    if r=='N':
+    if l[0]<l[1]<l[2]<l[3]<l[4]:
         break
-print(f'Os valores são {sorted(l)}')
+    else:
+        shuffle(l)
+print(f'Os valores em ordem são: {l}')
