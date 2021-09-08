@@ -1,10 +1,11 @@
-from random import shuffle
 l=[]
-for c in range(0,5):
-    l.append(int(input(f'Digite o {c+1}º valor: ')))
 while True:
-    if l[0]<l[1]<l[2]<l[3]<l[4]:
+    l.append(int(input('Digite um valor: ')))
+    r=str(input('Deseja digitar outro valor? [S/N] ')).upper()
+    if r=='N':
         break
-    else:
-        shuffle(l)
-print(f'Os valores em ordem são: {l}')
+print(f'Foram digitado {len(l)} números.')
+
+print(f'Os números em ordem decrescente são {sorted(l,reverse=True)}.')
+if l.count(5)!=0:
+    print(f'O número 5 aparece {l.count(5)} vezes')
