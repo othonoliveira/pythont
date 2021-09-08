@@ -1,16 +1,14 @@
+f=str(input('Digite uma expressão: '))
 l=[]
-p=[]
-i=[]
-while True:
-    l.append(int(input('Digite um valor: ')))
-    r=str(input('Deseja digitar outro valor? [S/N] ')).upper()
-    if r=='N':
-        break
-for c in range(0,len(l)):
-    if l[c]%2==0:
-        p.append(l[c])
-    else:
-        i.append(l[c])
-print(f'Os valores digitados foram {l}')
-print(f'Os valores impares são {i}')
-print(f'Os valores pares são {p}')
+for i in f:
+    if i=='(':
+        l.append('(')
+    elif i==')':
+        if len(l)>0:
+            l.pop()
+        else:
+            break
+if len(l)==0:
+    print('Sua expressão é válida!')
+else:
+    print('Sua expressão é inválida!')
