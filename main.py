@@ -1,28 +1,22 @@
-from operator import itemgetter
 j={}
-p=[]
-m=[]
-id=[]
-si=0
+gols=[]
 while True:
-    j['Nome']=str(input('Nome: ')).capitalize()
-    j['Sexo']=str(input('Sexo:[M/F] ')).upper()
-    j['Idade']=int(input('Idade: '))
-    si+=j['Idade']
-    id.append(j.get('Idade'))
-    print(id)
-    if j['Sexo']=='F':
-        m.append(j.copy())
-    p.append(j.copy())
-    j.clear
-    t=str(input('Deseja adicionar outra pessoa?[S/N] ')).upper()
+    j['nome']=str(input('Qual o nome do jogador? '))
+    j['qjogos']=int(input('Quantas pardidas ele jogou? '))
+    for g in range(1,j['qjogos']+1):
+        gols.append(int(input(f'Quantos gols ele fez na {g}ª partida? ')))
+    j['gols']=gols[:]
+    t=str(input('Deseja adicionar outro jogador?[S/N] '))
+    if t!='SN':
+        t=str(input('ERRO! Digite um valor entre S e N: '))
     if t=='N':
         break
-si=si/len(p)
-print(f'Foram cadastras {len(p)} pessoas.')
-print(f'A média das idades é {si:.2f}')
-print(f'As mulheres cadastradas foram {m}')
-print(f'As pessoas com idade maior q a média são ',end='')
-for c in range(0,len(id)):
-    if id[c]>si:
-        print(p[c],end=' ')
+print('-='*30)
+print(j)
+print('-='*30)
+for k,v in j.items():
+    print(f'O campo {k} tem valor {v}')
+print('-='*30)
+print(f'O jogador {j["nome"]} jogou {j["qjogos"]} partidas')
+for g in range(0,j['qjogos']):
+    print(f'Na partida {g+1}, fez {j["gols"][g]}')
