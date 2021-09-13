@@ -1,19 +1,9 @@
-from time import sleep
-def cont(init,fim,pas):
-    if init>fim:
-        con=init
-        while cont<=fim:
-            print(f'{con}', end=' ', flush=True)
-            con+=pas
-            sleep(0.5)
-        print('Fim!')
-    else:
-        con=init
-        while con<=fim:
-            print(f'{con}', end=' ', flush=True)
-            con-=pas
-            sleep(0.5)
-        print('Fim!')
+def maior(*n):
+    for c in range(0,len(n)):
+        cont=0
+        if n[c]>cont:
+            cont=n[c]
+    print(f'Os valores {n} foram digitados e o maior é {cont}')
 
 
-cont(-10,-8,-2)
+maior(9,7,10,3,15)
