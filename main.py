@@ -16,4 +16,4 @@ def fat(a,b=bool()):
 
 
 f=int(input('Digite um número: '))
-fat(f, True)
+fat(f)
