@@ -1,23 +1,14 @@
-from random import randint
-from time import sleep
-
-def sort():
-    print('Sorteando os números: ', end='')
-    for c in range(0,5):
-        sleep(1)
-        num.append(randint(0,100))
-        print(num[c], end=' ', flush=True)
+def voto(a):
+    from datetime import datetime
+    r=datetime.now().year-a
+    return r
 
 
-
-def somapar():
-    s=0
-    for c in range(0,5):
-        if num[c]%2==0:
-            s+=num[c]
-    return(s)
-
-
-num=[]
-sort()
-print(f'\nA soma dos números pares é: {somapar()}')
+a=int(input('Digite o ano de nascimento: '))
+r=voto(a)
+if r>=18:
+    print('Voto OBRIGATÓRIO')
+if r<18 and r>=16:
+    print('Voto OPCIONAL')
+if r<16:
+    print('Voto NEGADO')
