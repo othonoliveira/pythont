@@ -1,19 +1,24 @@
-def fat(a,b=bool()):
-    r=1
-    if a==1:
-        print(f'O reultado é: {a}')
-    elif b==False:
-        for c in range(1,a+1):
-            r*=c
-        print(f'O resultado é: {r}')
-    elif b==True:
-        for c in range(a,0,-1):
-            r*=c
-            if c!=1:
-                print(f'{c} X', end=' ')
-            if c==1:
-                print(f'1 = {r}')
+from tkinter import *
 
+def somar():
+    s1=int(n1.get())
+    s2=int(n2.get())
+    mostrar['text']=s1+s2
 
-f=int(input('Digite um número: '))
-fat(f)
+root=Tk()
+
+root.geometry('400x400')
+root.title('Cadastro')
+
+n1=Entry()
+n1.grid(row=0, column=0)
+
+n2=Entry()
+n2.grid(row=1, column=0)
+
+Button(text='SOMAR', command=somar).grid(row=2, column=0)
+
+mostrar=Label(text='Resultado')
+mostrar.grid(row=3, column=0)
+
+root.mainloop()
