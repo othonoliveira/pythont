@@ -1,30 +1,49 @@
-def res(A):
+def max_sum(A):
     max_so_far = 0
     max_ending_here = 0
-    sum_negative=0
-    min_value=0
+    min_value=A[0]
     positions=[]
     count=0
+
     for i in A:
         max_ending_here = max_ending_here + i
         max_ending_here = max(max_ending_here, 0)
+        if max_ending_here != 0:
+            positions.append(count)
         max_so_far = max(max_so_far, max_ending_here)
-        if i < min_value:
-            min_value=i
-    
-    if max_so_far >= 0:
-        for i in A:
-            
+        count+=1
 
-    if min_value<0:
+    if A[0] < 0 and A[1] < 0 and A[2] < 0 and A[3] < 0 and A[4] < 0:
         for i in A:
             if i > min_value:
                 min_value=i
                 positions.append(count)
+        return min_value
 
-        return min_value , positions
+    else:
+        return max_so_far
 
-    return max_so_far
+def position(A):
+    max_so_far = 0
+    max_ending_here = 0
+    min_value=A[0]
+    positions=[]
+    count=0
+    
+    for i in A:
+        max_ending_here = max_ending_here + i
+        max_ending_here = max(max_ending_here, 0)
+        if max_ending_here != 0:
+            positions.append(count)
+        max_so_far = max(max_so_far, max_ending_here)
+        count+=1
 
-r=[1,2,3,4,-1000]
-print(res(r))
+    if A[0] < 0 and A[1] < 0 and A[2] < 0 and A[3] < 0 and A[4] < 0:
+        for i in A:
+            if i > min_value:
+                min_value=i
+                positions.append(count)
+        return positions
+
+    else:
+        return positions
